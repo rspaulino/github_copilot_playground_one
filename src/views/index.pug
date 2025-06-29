@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1= title
+    if posts && posts.length
+      each post in posts
+        div.post
+          h2
+            a(href=`/post/${post.id}`) #{post.title}
+          p
+            | Location: #{post.location} | Date: #{post.date}
+          p #{post.content.substring(0, 100)}...
+    else
+      p No travel posts yet.
